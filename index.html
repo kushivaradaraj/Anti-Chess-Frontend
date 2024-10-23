@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="/Assets/images/chess.ico">
+  <title>Anti-Chess</title>
+</head>
+
+<body>
+  <div class="centered-box">
+    <h1>Anti-Chess Game</h1>
+  </div>
+  <div class="bottom-right-box">
+    <p>Styled by <br>Kushi Varadaraj</p>
+    <!-- <button style="font-size:24px"><i class="fa fa-github"></i></button>  -->
+    <div class="button-container">
+      <p style="margin-right: 10px;"></p>
+      <a href="https://github.com/kushivaradaraj/Anti-Chess-Frontend" target="_blank">
+        <button style="font-size:24px"><i class="fa fa-github"></i></button>
+      </a>
+    </div>
+    <div></div>
+  </div>
+
+  <div id="root"></div>
+  <div class="button-quit">
+    <button id="quitWhite" onclick="quitGame('WHITE')">White Quit</button>
+    <button id="quitBlack" onclick="quitGame('BLACK')">Black Quit</button>
+  </div>
+
+</body>
+<script type="module" src="index.js"></script>
+
+<style>
+  
+  .rules-btn {
+      background-color: #ddc36c;
+      color: rgb(69, 40, 10);
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px; 
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.1s;
+  }
+
+ 
+  .rules-btn:hover {
+      background-color: #482315;
+      color:#ddc36c;
+      transform: scale(1.05); 
+  }
+</style>
+</head>
+<body>
+
+<button class="rules-btn" onclick="showRules()">Rules</button>
+
+<script>
+  function showRules() {
+      alert("Basic Game Rules:\n" +
+            "1. If you can capture an opponent's piece, you must.\n" +
+            "2. If you're left with only your king, you win!\n" +
+            "3. If your king is checkmated, you still win.\n\n" +
+            "Further Clarifications:\n" +
+            "1. If multiple pieces can be captured, you can choose which one.\n" +
+            "2. Don't put your king in check, that's illegal.\n" +
+            "3. If your king is in check, you must capture to escape if possible.\n" +
+            "4. No legal moves left? It's a draw.\n\n" +
+            "For rated games, remember:\n" +
+            "- If you're checkmated, it counts as a loss, but according to the game, that means you win.\n" 
+            );
+  }
+</script>
+
+</html>
